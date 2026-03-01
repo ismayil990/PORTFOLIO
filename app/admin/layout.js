@@ -7,7 +7,6 @@ export default function AdminLayout({ children }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const menuItems = [
-    { name: 'Dashboard', icon: <LayoutDashboard size={20} />, href: '/admin' },
     { name: 'Hero', icon: <FileText size={20} />, href: '/admin/hero' },
     { name: 'Haqqımda', icon: <User size={20} />, href: '/admin/about' },
     { name: 'Xidmətlər', icon: <Briefcase size={20} />, href: '/admin/services' },
