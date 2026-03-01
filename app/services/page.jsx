@@ -72,7 +72,7 @@ export default function Services() {
             </div>
           ) : (
             <div className="grid gap-8 mb-16">
-              {services.map((service, idx) => (
+              {services?.map((service, idx) => (
                 <div key={idx} className="glass-card hover:border-purple-500/30 p-8 md:p-10 rounded-3xl flex flex-col md:flex-row gap-8 items-start md:items-center bg-white/5 border border-white/10">
                   <div className="flex-grow">
                     <div className="flex flex-row md:items-center gap-4 mb-4">

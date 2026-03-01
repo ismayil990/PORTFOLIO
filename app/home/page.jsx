@@ -55,24 +55,24 @@ export default function Home() {
           >
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 text-sm font-medium mb-6">
               <Sparkles className="w-4 h-4" />
-              <span>{data.badge}</span>
+              <span>{data?.badge}</span>
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold leading-[1.1] mb-6 whitespace-pre-line">
-              {data.title}
+              {data?.title}
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl leading-relaxed">
-              {data.description}
+              {data?.description}
             </p>
             <div className="flex flex-wrap gap-4">
               <Link href="/booking">
                 <Button className="h-12 px-8 rounded-full bg-white text-black hover:bg-purple-100 font-semibold text-base transition-all shadow-[0_0_20px_rgba(255,255,255,0.15)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] group">
-                  {data.primaryBtn}
+                  {data?.primaryBtn}
                   <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
               <Link href="/about">
                 <Button variant="outline" className="h-12 px-8 rounded-full border-white/20 hover:bg-white/5 font-semibold text-base">
-                  {data.secondaryBtn}
+                  {data?.secondaryBtn}
                 </Button>
               </Link>
             </div>
@@ -87,7 +87,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/20 to-indigo-600/20 rounded-[2rem] blur-2xl" />
             <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-white/10 shadow-2xl">
               <img 
-                src={data.imageUrl} 
+                src={data?.imageUrl} 
                 alt="Dr"
                 className="w-full h-full object-cover"
               />
@@ -97,8 +97,8 @@ export default function Home() {
                     <Heart className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">{data.experienceYears}</p>
-                    <p className="text-sm text-purple-200">{data.experienceText}</p>
+                    <p className="text-white font-medium">{data?.experienceYears}</p>
+                    <p className="text-sm text-purple-200">{data?.experienceText}</p>
                   </div>
                 </div>
               </div>

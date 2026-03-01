@@ -19,7 +19,7 @@ export default function About() {
       <div id="about" className="container mx-auto px-4 max-w-5xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-display font-bold mb-6 text-white">
-            {data?.title?.split(' ').slice(0, -2).join(' ')} <span className="text-purple-400">{data?.title.split(' ').slice(-2).join(' ')}</span>
+            {data?.title?.split(' ').slice(0, -2).join(' ')} <span className="text-purple-400">{data?.title?.split(' ').slice(-2).join(' ')}</span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">{data?.subtitle}</p>
         </div>

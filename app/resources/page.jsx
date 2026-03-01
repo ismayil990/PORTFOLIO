@@ -73,7 +73,7 @@ export default function Resources() {
                   isExpanded ? "max-h-[2000px]" : "max-h-[350px]"
                 }`}
               >
-                {resources.map((res) => (
+                {resources?.map((res) => (
                   <a
                     key={res.id}
                     href={res.url}
