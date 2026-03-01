@@ -1,0 +1,86 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// Hero Section üçün tam model
+model Hero {
+  id              String   @id @default(auto()) @map("_id") @db.ObjectId
+  badge           String   @default("Yeni pasiyentlər qəbul olunur")
+  title           String
+  description     String
+  primaryBtn      String   @default("Məsləhət üçün yazılın")
+  secondaryBtn    String   @default("Haqqımda daha çox")
+  imageUrl        String
+  experienceYears String   @default("10+")
+  experienceText  String   @default("Klinik Təcrübə")
+  
+  // İxtisaslaşdığım sahələri (Focus Areas) JSON formatında saxlamaq MongoDB-də çox rahatdır
+  focusAreas      Json     
+  focusSectionTitle String @default("İxtisaslaşdığım Sahələr")
+  focusSectionDesc  String @default("Həyatın ən mürəkkəb çətinliklərində sizə kömək edəcək peşəkar dəstək.")
+  
+  updatedAt       DateTime @updatedAt
+}
+
+
+model About {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String   @default("Dr. Valeri ilə Tanış Olun")
+  subtitle    String   @default("Daxili gücünüzü bərpa etməyə kömək edən peşəkar klinik psixoloq.")
+  imageUrl    String   @default("https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80")
+  approachTitle String @default("Yanaşmam")
+  approachText1 String   @db.String
+  approachText2 String   @db.String
+  skillsTitle   String   @default("İxtisas və Təcrübə")
+  skills        String[] // Təhsil və təcrübə bəndləri
+  buttonText    String   @default("Mənimlə işə başlayın")
+  updatedAt     DateTime @updatedAt
+}
+
+model Service {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  price       String
+  description String
+  order       Int      @default(0) // Sıralama üçün
+  updatedAt   DateTime @updatedAt
+}
+
+// Xidmətlər səhifəsinin başlığı və alt mətni üçün ayrıca model
+model ServicesConfig {
+  id          String @id @default(auto()) @map("_id") @db.ObjectId
+  mainTitle   String @default("Terapiya Xidmətləri")
+  subDescription String @default("Ehtiyaclarınıza və həyat tərzinizə uyğun...")
+}
+
+model ContactConfig {
+  id           String   @id @default(auto()) @map("_id") @db.ObjectId
+  title        String   @default("Bizimlə Əlaqə")
+  description  String   @default("Rezervasiyadan öncə suallarınız var?")
+  addressTitle String   @default("Ofis Ünvanı")
+  addressLine1 String   @default("Wellness prospekti 123, Suite 400")
+  addressLine2 String   @default("Bakı, Azərbaycan")
+  hoursTitle   String   @default("İş Saatları")
+  hoursLine1   String   @default("Bazar ertəsi - Cümə: 09:00 - 18:00")
+  hoursLine2   String   @default("Şənbə - Bazar: Bağlıdır")
+  contactTitle String   @default("Əlaqə Məlumatları")
+  phone        String   @default("+994 (50) 123-45-67")
+  email        String   @default("hello@drvalerie.com")
+  ctaTitle     String   @default("Başlamağa hazırsınız?")
+  ctaBtnText   String   @default("Rezervasiya Formuna Keçid")
+  ctaBgUrl     String   @default("https://images.unsplash.com/photo-1524661135-423995f22d0b")
+  updatedAt    DateTime @updatedAt
+}
+
+model Resource {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  title     String
+  url       String
+  type      String   // "Məqalə", "PDF", "Video" və s.
+  createdAt DateTime @default(now())
+}

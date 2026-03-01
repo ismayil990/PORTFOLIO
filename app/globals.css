@@ -24,3 +24,9 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+body::-webkit-scrollbar{
+ width: 2px;
+}
+body::-webkit-scrollbar-thumb{
+  background: rgb(129, 0, 155);
+}
